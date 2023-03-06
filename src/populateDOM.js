@@ -13,7 +13,7 @@ function PopulateDOM(data) {
   FEELS.textContent = data.feel;
   MIN_TEMP.textContent = data.minTemp;
   MAX_TEMP.textContent = data.maxTemp;
-  WEATHER_ICON.textContent = data.icon;
+  WEATHER_ICON.src = `http://openweathermap.org/img/wn/${data.icon}@4x.png`;
 }
 
 export { PopulateDOM };

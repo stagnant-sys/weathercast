@@ -14,6 +14,7 @@ async function GetWeatherObject(location, units) {
   try {
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=${units}&APPID=56275265321a72bf87e1fa7566ad28dd`, {mode: 'cors'});
     const weatherData = await response.json();
+    console.log(weatherData);
     return weatherData;
   } catch (error) {
     throw new Error('Error', {cause: error});
@@ -27,6 +28,7 @@ function GetMainData(obj) {
       location: obj.name,
       country: obj.sys.country,
       weather: obj.weather[0].description,
+      weatherType: obj.weather[0].main,
       temp: Math.round(obj.main.temp),
       minTemp: Math.round(obj.main.temp_min),
       maxTemp: Math.round(obj.main.temp_max),
