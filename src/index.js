@@ -8,6 +8,14 @@ const FORM = document.getElementById('userInputForm');
 const USER_LOCATION = document.getElementById('userLocation');
 
 
+// INITIAL PAGE
+async function LoadInitialPage(location) {
+  await GetWeatherData(location, units);
+  await PopulateDOM(mainData, units);
+}
+
+LoadInitialPage('Genève');
+
 // WEATHER DATA
 // Get weather datas
 async function GetWeatherObject(location, units) {
@@ -56,7 +64,7 @@ async function GetWeatherData(location, units) {
 FORM.addEventListener('submit', async (e) => {
   e.preventDefault();
   await GetWeatherData(USER_LOCATION.value, units);
-  await PopulateDOM(mainData);
+  await PopulateDOM(mainData, units);
 });
 
 
