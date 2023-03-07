@@ -2,6 +2,9 @@
 
 ## Weather web app
 
+![Desktop view](./md_images/desktop.jpg "Desktop view")
+
+
 ### Goals
 
 This website was created during The Odin Project curriculum.

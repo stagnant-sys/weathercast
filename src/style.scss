@@ -27,6 +27,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 18px;
+  box-shadow: 5px 0 5px #4444447d;
 
   .user-actions {
     display: flex;
@@ -94,10 +95,35 @@ header {
 }
 
 footer {
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;  
   width: 100%;
-  height: 5vh;
+  min-height: 5vh;
   background-color: black;
   color: white;
+
+  @media (min-width: 40rem) {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+
+  a {
+    text-decoration: none;
+    color: white;
+
+    &:hover {
+      text-decoration: overline;
+    }
+  }
+
+  .icon {
+    height: 1rem;
+    vertical-align: middle;
+  }
 }
 
 #website-logo {
@@ -145,7 +171,7 @@ footer {
   @media (min-width: 40rem) {
     display: grid;
     grid-template-areas:  'location main'
-                          'location details';
+                          'quote details';
   }
 }
 
@@ -156,6 +182,20 @@ footer {
   #location {
     font-size: 3rem;
     font-weight: 700;
+  }
+}
+
+.quote-block {
+  display: none;
+  grid-area: quote;
+  max-width: 350px;
+  font-size: 0.8rem;
+  color: #777777;
+  font-style: italic;
+  text-align: justify;
+
+  @media (min-width: 40rem) {
+    display: block;
   }
 }
 
