@@ -10,12 +10,22 @@
 <body>
   <div id="background"></div>
 
+  <div class="loading-screen">
+    <div class="loading-message">Loading...</div>
+  </div>
+
   <header>
     <div id="website-logo">Weathercast</div>
-    <form action="" id="userInputForm">
-      <input type="text" name="userLocation" id="userLocation" placeholder="Search your location...">
-      <button type="submit">Search</button>
-    </form>
+    <div class="user-actions">
+      <div class="units-toggle">Change units :
+        <span class="metric-toggle active">°C</span> |
+        <span class="imperial-toggle">°F</span>
+      </div>
+      <form action="" id="userInputForm">
+        <input type="text" name="userLocation" id="userLocation" placeholder="Search your location...">
+        <button type="submit">Search</button>
+      </form>
+    </div>
   </header>
 
 <main>
@@ -25,21 +35,21 @@
       <div id="country">Country</div>
     </div>
     <div class="data-block__main-info">
-      <div id="temp">Temp</div>
+      <div id="temp">Temperature</div>
       <div id="weather">Weather</div>
       <div class="icon-container"><img id="weather-icon"></div>
     </div>
     <div class="data-block__details">
       <div class="detail-block">
-        <div class="data__title">Feels like:</div>
+        <div class="data__title">Feels like :</div>
         <div id="feels"></div>
       </div>
       <div class="detail-block">
-        <div class="data__title">Min temperature:</div>
+        <div class="data__title">Min temperature :</div>
         <div id="min-temp"></div>
       </div>
       <div class="detail-block">
-        <div class="data__title">Max temperature:</div>
+        <div class="data__title">Max temperature :</div>
         <div id="max-temp"></div>
       </div>
   </section>
