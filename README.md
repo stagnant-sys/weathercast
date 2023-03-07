@@ -2,7 +2,7 @@
 
 ## Weather web app
 
-<img src= "./md_images/desktop.jpg" alt="Mobile view" width="570"> <img src="./md_images/mobile.jpg" alt="Mobile view" width="150">
+<img src= "./md_images/desktop.jpg" alt="Mobile view" width="550"> <img src="./md_images/mobile.jpg" alt="Mobile view" width="150">
 
 
 
