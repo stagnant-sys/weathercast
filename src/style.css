@@ -93,6 +93,9 @@ footer {
   display: none;
   justify-content: center;
   align-items: center; }
+  .loading-screen .loading-message {
+    font-size: 2rem;
+    color: #ffffff; }
 
 .data-container {
   border: 1px solid #dddddd;

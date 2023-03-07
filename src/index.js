@@ -7,7 +7,7 @@ let mainData;
 let userLocation = 'Genève';
 const LOADING_SCREEN = document.querySelector('.loading-screen');
 const FORM = document.getElementById('userInputForm');
-const USER_LOCATION = document.getElementById('userLocation');
+const USER_LOCATION_INPUT = document.getElementById('userLocation');
 const METRIC_TOGGLE = document.querySelector('.metric-toggle');
 const IMPERIAL_TOGGLE = document.querySelector('.imperial-toggle');
 
@@ -92,7 +92,7 @@ async function GetWeatherData(location, units) {
 // GET USER INPUT TO GET DATA AND UPDATE DISPLAY
 FORM.addEventListener('submit', async (e) => {
   e.preventDefault();
-  userLocation = USER_LOCATION.value;
+  userLocation = USER_LOCATION_INPUT.value;
   await GetWeatherData(userLocation, units);
   await PopulateDOM(mainData, units);
 });
