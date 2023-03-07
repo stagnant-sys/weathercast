@@ -11,7 +11,7 @@ body {
 }
 
 main {
-  height: 85vh;
+  min-height: 85vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,6 +107,7 @@ footer {
 
 #background {
   position: fixed;
+  background-size: cover;
   height: 100%;
   width: 100%;
   z-index: -1;
@@ -131,9 +132,10 @@ footer {
 .data-container {
   border: 1px solid #dddddd;
   border-radius: 5px;
-  background-color: #fdfdfd;
+  background-color: #fdfdfde2;
   width: clamp(60%, 400px, 80%);
   padding: 24px;
+  margin: 16px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -171,7 +173,10 @@ footer {
   #weather {
     grid-area: weather;
     font-weight: 500;
+
+    @media (min-width: 40rem) {
     align-self: start;
+    }
   }
 
   .icon-container {

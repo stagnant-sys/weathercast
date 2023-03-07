@@ -75,7 +75,7 @@ function GetMainData(obj) {
 
 // Chain the two previous functions
 async function GetWeatherData(location, units) {
-  console.log('Loading...');
+  //console.log('Loading...');
   LOADING_SCREEN.style.display = 'flex';
   try {
     const object = await GetWeatherObject(location, units);

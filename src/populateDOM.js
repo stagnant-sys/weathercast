@@ -23,24 +23,29 @@ function PopulateDOM(data, units) {
   MAX_TEMP.textContent = data.maxTemp  + '°' + tempUnit;
   WEATHER_ICON.src = `http://openweathermap.org/img/wn/${data.icon}@4x.png`;
   let backgroundColor;
+  let backgroundImagePath;
   switch (data.weatherType) {
     case 'Clear':
-      backgroundColor = '#e8f7fd';
+      backgroundImagePath = './images/clear.jpg';
+      //backgroundColor = '#e8f7fd';
       break;
     case 'Clouds':
-      backgroundColor = '#dbdfe3';
+      backgroundImagePath = './images/clouds.jpg';
+      //backgroundColor = '#dbdfe3';
       break;
     case 'Snow':
-      backgroundColor = '#efefef';
+      backgroundImagePath = './images/snow.jpg';
+      //backgroundColor = '#efefef';
       break;
     case 'Sand':
     case 'Dust':
-      backgroundColor = '#f6d7b0';
+      //backgroundColor = '#f6d7b0';
       break;
     default:
-      backgroundColor = '#d2d9db';
+      backgroundImagePath = './images/rain.jpg';
+      //backgroundColor = '#d2d9db';
   }
-  BACKGROUND.style.backgroundColor = backgroundColor;
+  BACKGROUND.style.backgroundImage = `url(${backgroundImagePath})`;
 }
 
 export { PopulateDOM };
