@@ -20,3 +20,4 @@ This website was created during The Odin Project curriculum.
   - footer (photo credits)
   - add date/time
   - suggested clothing
+  - citations about weather
