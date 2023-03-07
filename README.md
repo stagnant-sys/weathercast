@@ -2,7 +2,8 @@
 
 ## Weather web app
 
-![Desktop view](./md_images/desktop.jpg "Desktop view")
+![Desktop view](./md_images/desktop.jpg "Desktop view") ![Mobile view](./md_images/mobile.jpg "Mobile view")
+
 
 
 ### Goals
