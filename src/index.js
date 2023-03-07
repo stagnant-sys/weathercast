@@ -4,8 +4,12 @@ import { PopulateDOM } from './populateDOM';
 // Global variables
 let units = 'metric';
 let mainData;
+let userLocation = 'Genève';
+const LOADING_SCREEN = document.querySelector('.loading-screen');
 const FORM = document.getElementById('userInputForm');
 const USER_LOCATION = document.getElementById('userLocation');
+const METRIC_TOGGLE = document.querySelector('.metric-toggle');
+const IMPERIAL_TOGGLE = document.querySelector('.imperial-toggle');
 
 
 // INITIAL PAGE
@@ -16,13 +20,34 @@ async function LoadInitialPage(location) {
 
 LoadInitialPage('Genève');
 
+// LOADING SCREEN
+
+
+// UNITS TOGGLE BUTTONS
+METRIC_TOGGLE.addEventListener('click', async (e) => {
+  units = 'metric';
+  METRIC_TOGGLE.classList.add('active');
+  IMPERIAL_TOGGLE.classList.remove('active');
+  await GetWeatherData(userLocation, units);
+  await PopulateDOM(mainData, units);
+});
+
+IMPERIAL_TOGGLE.addEventListener('click', async (e) => {
+  units = 'imperial';
+  IMPERIAL_TOGGLE.classList.add('active');
+  METRIC_TOGGLE.classList.remove('active');
+  await GetWeatherData(userLocation, units);
+  await PopulateDOM(mainData, units);
+});
+
 // WEATHER DATA
 // Get weather datas
 async function GetWeatherObject(location, units) {
   try {
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=${units}&APPID=56275265321a72bf87e1fa7566ad28dd`, {mode: 'cors'});
     const weatherData = await response.json();
-    console.log(weatherData);
+    userLocation = await location;
+    //console.log(weatherData);
     return weatherData;
   } catch (error) {
     throw new Error('Error', {cause: error});
@@ -51,11 +76,14 @@ function GetMainData(obj) {
 // Chain the two previous functions
 async function GetWeatherData(location, units) {
   console.log('Loading...');
+  LOADING_SCREEN.style.display = 'flex';
   try {
     const object = await GetWeatherObject(location, units);
     await GetMainData(object);
-    console.log(mainData);
+    await function () {LOADING_SCREEN.style.display = 'none';}();
+    //console.log(mainData);
   } catch (error) {
+    alert('We could\'t find this city...');
     throw new Error('Error', {cause: error});
   }
 }

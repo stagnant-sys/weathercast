@@ -28,6 +28,27 @@ header {
   justify-content: space-between;
   padding: 18px;
 
+  .user-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    .metric-toggle {
+      color: #999999;
+      cursor: pointer;
+    }
+
+    .imperial-toggle {
+      color: #999999;
+      cursor: pointer;
+    }
+
+    .active {
+      color: #eb6e4b;
+      font-weight: 700;
+    }
+  }
+
   form {
     display: flex;
     gap: 8px;
@@ -46,8 +67,8 @@ header {
   }
 
   button {
-    font-size: 1.2rem;
-    padding: 5px;
+    font-size: 1rem;
+    padding: 7px;
     background-color: #eb6e4b;
     border-radius: 5px;
     border: none;
@@ -81,6 +102,17 @@ footer {
   height: 100%;
   width: 100%;
   z-index: -1;
+}
+
+.loading-screen {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  background-color: #9999997d;
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
 
 .data-container {
