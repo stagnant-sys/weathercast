@@ -84,6 +84,7 @@ async function GetWeatherData(location, units) {
     //console.log(mainData);
   } catch (error) {
     alert('We could\'t find this city...');
+    await function () {LOADING_SCREEN.style.display = 'none';}();
     throw new Error('Error', {cause: error});
   }
 }
@@ -91,7 +92,8 @@ async function GetWeatherData(location, units) {
 // GET USER INPUT TO GET DATA AND UPDATE DISPLAY
 FORM.addEventListener('submit', async (e) => {
   e.preventDefault();
-  await GetWeatherData(USER_LOCATION.value, units);
+  userLocation = USER_LOCATION.value;
+  await GetWeatherData(userLocation, units);
   await PopulateDOM(mainData, units);
 });
 

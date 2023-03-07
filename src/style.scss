@@ -30,6 +30,7 @@ header {
 
   .user-actions {
     display: flex;
+    flex-direction: column-reverse;
     align-items: center;
     gap: 16px;
 
@@ -46,6 +47,13 @@ header {
     .active {
       color: #eb6e4b;
       font-weight: 700;
+    }
+
+    @media (min-width: 40rem) {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 16px;
     }
   }
 

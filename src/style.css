@@ -24,6 +24,7 @@ header {
   padding: 18px; }
   header .user-actions {
     display: flex;
+    flex-direction: column-reverse;
     align-items: center;
     gap: 16px; }
     header .user-actions .metric-toggle {
@@ -35,6 +36,12 @@ header {
     header .user-actions .active {
       color: #eb6e4b;
       font-weight: 700; }
+    @media (min-width: 40rem) {
+      header .user-actions {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 16px; } }
   header form {
     display: flex;
     gap: 8px;
