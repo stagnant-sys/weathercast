@@ -26,6 +26,5 @@ This website was created during The Odin Project curriculum.
 - Webpack.
 
 
-### To do :
-  - Add date/time
-  - Suggest clothing
+### Credits
+- Loading animation by [Abraham Calsin](https://uiverse.io/profile/abrahamcalsin) on [UIverse](https://uiverse.io/abrahamcalsin/serious-turkey-52).
