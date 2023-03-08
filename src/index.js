@@ -10,7 +10,6 @@ const FORM = document.getElementById('userInputForm');
 const USER_LOCATION_INPUT = document.getElementById('userLocation');
 const METRIC_TOGGLE = document.querySelector('.metric-toggle');
 const IMPERIAL_TOGGLE = document.querySelector('.imperial-toggle');
-const CLOCK = document.getElementById('clock');
 
 // INITIAL PAGE
 async function LoadInitialPage(location) {
